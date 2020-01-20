@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/dxball/Ball.h
+SFML/Graphics.hpp
+-
+
+../include/dxball/Brick.h
+SFML/Graphics.hpp
+-
+
+../include/dxball/Player.h
+SFML/Graphics.hpp
+-
+
+/home/aqua/web-dev/c-dev/dxball/src/game.cpp
+SFML/Graphics.hpp
+-
+SFML/Audio.hpp
+-
+iostream
+-
+sstream
+-
+string
+-
+deque
+-
+cstdlib
+-
+iomanip
+-
+ctime
+-
+dxball/Player.h
+/home/aqua/web-dev/c-dev/dxball/src/dxball/Player.h
+dxball/Brick.h
+/home/aqua/web-dev/c-dev/dxball/src/dxball/Brick.h
+dxball/Ball.h
+/home/aqua/web-dev/c-dev/dxball/src/dxball/Ball.h
+

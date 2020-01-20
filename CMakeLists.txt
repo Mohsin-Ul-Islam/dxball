@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.0)
+project(dxball)
+include_directories(./include ./src)
+find_package(SFML 2.5 COMPONENTS graphics system REQUIRED)
+add_executable(game ./src/game.cpp ./src/Player.cpp ./src/Brick.cpp ./src/Ball.cpp)
+target_link_libraries(game sfml-graphics sfml-system sfml-audio)
