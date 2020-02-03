@@ -123,7 +123,8 @@ int main(int argc, char** argv)
 
   RenderWindow window(VideoMode(screen_width,screen_height),"DxBall",Style::Fullscreen);
   window.setFramerateLimit(60);
-
+  window.setMouseCursorVisible(false);
+  
   Player* platform = new Player(160,10,Color(223,77,2),10);
   Ball* ball = new Ball(10,15,Color::Blue);
   std::deque<Brick> bricks(total_bricks);
@@ -165,22 +166,7 @@ int main(int argc, char** argv)
       drops.at(i).move();
     }
 
-
-    if(Keyboard::isKeyPressed(Keyboard::Left))
-    {
-      if(platform->player.getPosition().x - platform->player.getSize().x/2 > 0)
-      {
-        platform->moveLeft();
-      }
-    }
-
-    if(Keyboard::isKeyPressed(Keyboard::Right))
-    {
-      if(platform->player.getPosition().x + platform->player.getSize().x/2 < screen_width)
-      {
-        platform->moveRight();
-      }
-    }
+    platform->player.setPosition(Mouse::getPosition().x,platform->player.getPosition().y);
 
     if(ball->position.x - ball->radius <= 0)
     {
