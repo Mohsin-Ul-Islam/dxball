@@ -7,20 +7,25 @@ using namespace sf;
 
 class Brick
 {
+  private:
+
+    int life_count;
+    RectangleShape brick;
+
   public:
 
-    int width;
-    int height;
-    int life_count;
-    Vector2f position;
-    RectangleShape brick;
-    Color color;
-    bool destroy;
-
     Brick();
+    Brick(float,float,Vector2f,Color);
     ~Brick();
-    void init();
+
     void render(RenderWindow& w);
+
+    //getters
+    inline int getLifeCount() const {return this->life_count;};
+    inline RectangleShape* self() {return &this->brick;};
+
+    //setters
+    void setLifeCount(const int& lc);
 
 };
 

@@ -124,7 +124,7 @@ int main(int argc, char** argv)
   RenderWindow window(VideoMode(screen_width,screen_height),"DxBall",Style::Fullscreen);
   window.setFramerateLimit(60);
   window.setMouseCursorVisible(false);
-  
+
   Player* platform = new Player(160,10,Color(223,77,2),10);
   Ball* ball = new Ball(10,15,Color::Blue);
   std::deque<Brick> bricks(total_bricks);
@@ -134,14 +134,14 @@ int main(int argc, char** argv)
   int num_bricks_row = screen_width/brick_width;
   for(int i = 0; i<bricks.size(); i++)
   {
-    bricks[i].brick.setSize(Vector2f(brick_width,brick_height));
-    bricks[i].brick.setFillColor(Color(255,rand() % 255, rand() % 255));
-    bricks[i].brick.setOrigin(brick_width/2,brick_height/2);
-    bricks[i].life_count = (rand() % 4) + 1;
+    bricks[i].self()->setSize(Vector2f(brick_width,brick_height));
+    bricks[i].self()->setFillColor(Color(255,rand() % 255, rand() % 255));
+    bricks[i].self()->setOrigin(brick_width/2,brick_height/2);
+    bricks[i].setLifeCount(0);
     //bricks[i].brick.setOrigin(Vector2f(brick_width/2,brick_height/2));
     int posx = i % num_bricks_row;
     int posy = i / num_bricks_row;
-    bricks[i].brick.setPosition(Vector2f(posx * brick_width, 100 + brick_height + posy * brick_height));
+    bricks[i].self()->setPosition(Vector2f(posx * brick_width, 100 + brick_height + posy * brick_height));
   }
 
   while(window.isOpen())
@@ -168,22 +168,22 @@ int main(int argc, char** argv)
 
     platform->player.setPosition(Mouse::getPosition().x,platform->player.getPosition().y);
 
-    if(ball->position.x - ball->radius <= 0)
+    if(ball->self()->getPosition().x - ball->self()->getRadius() <= 0)
     {
-      ball->ms_x = -ball->ms_x;
+      ball->setHorizontalVelocity(-ball->getHorizontalVelocity());
     }
 
-    if(ball->position.x + ball->radius >= screen_width)
+    if(ball->self()->getPosition().x + ball->self()->getRadius() >= screen_width)
     {
-      ball->ms_x = -ball->ms_x;
+      ball->setHorizontalVelocity(-ball->getHorizontalVelocity());
     }
 
-    if(ball->position.y - ball->radius <= 0)
+    if(ball->self()->getPosition().y - ball->self()->getRadius() <= 0)
     {
-      ball->ms_y = -ball->ms_y;
+      ball->setVerticalVelocity(-ball->getVerticalVelocity());
     }
 
-    if(ball->position.y >= screen_height + (ball->radius * 2) || bricks.size() <= 0)
+    if(ball->self()->getPosition().y >= screen_height + (ball->self()->getRadius() * 2) || bricks.size() <= 0)
     {
       window.close();
     }
@@ -193,29 +193,29 @@ int main(int argc, char** argv)
     {
       platform_sound.play();
       //log(toString(rand() % 255));
-      ball->ms_x = (ratio) * ball->ms_y;
-      ball->ms_y = -ball->ms_y;
+      ball->setHorizontalVelocity((ratio) * ball->getVerticalVelocity());
+      ball->setVerticalVelocity(-ball->getVerticalVelocity());
       int r = rand() % 255;
       int g = rand() % 255;
       int b = rand() % 255;
       //std::cout<<"rgb("<<r<<","<<g<<","<<b<<")"<<std::endl;
-      ball->ball.setFillColor(Color(r,g,b));
+      ball->self()->setFillColor(Color(r,g,b));
       total_bounces += 1;
     }
 
     for(int i = 0; i<bricks.size(); i++)
     {
-      float ratio = ball->isColliding(bricks[i].brick);
+      float ratio = ball->isColliding(*bricks[i].self());
       if(ratio != 0)
       {
-        ball->ms_x = (-ratio) * ball->ms_y;
-        ball->ms_y = -ball->ms_y;
+        ball->setHorizontalVelocity((-ratio) * ball->getVerticalVelocity());
+        ball->setVerticalVelocity(-ball->getVerticalVelocity());
         brick_sound.play();
-        if(bricks[i].life_count == 0)
+        if(bricks[i].getLifeCount() == 0)
         {
           if(rand() % 100 <= 40)
           {
-            drops.push_back(Drop(13,Color(250,250,250),8,bricks[i].brick.getPosition()));
+            drops.push_back(Drop(13,Color(250,250,250),8,bricks[i].self()->getPosition()));
             //log("drop");
           }
           bricks.erase(bricks.begin() + i);
@@ -223,8 +223,8 @@ int main(int argc, char** argv)
         }
         else
         {
-          bricks[i].brick.setFillColor(Color(rand() % 255, rand() % 255, rand() % 255));
-          bricks[i].life_count -= 1;
+          bricks[i].self()->setFillColor(Color(rand() % 255, rand() % 255, rand() % 255));
+          bricks[i].setLifeCount(bricks[i].getLifeCount() - 1);
         }
       }
     }
@@ -241,19 +241,12 @@ int main(int argc, char** argv)
     if(level_time >= 20)
     {
       level_time = 0;
-      if(ball->ms_y < 0)
-      {
-        //ball->ms_y -= 3;
-      }
-      else
-      {
-        //ball->ms_y += 3;
-      }
     }
     stats.setString("Score: " + toString(score) + " | Time: " + toString(total_time) + " seconds | Bounces: " + toString(total_bounces));
     window.clear();
     for(int i = 0; i<bricks.size(); i++)
     {
+      //log("rendering brick number " + toString(i+1) + " (" + toString(bricks[i].self()->getPosition().x) + "," + toString(bricks[i].self()->getPosition().y) + ")");
       bricks[i].render(window);
     }
     for(int i = 0; i<drops.size(); i++)

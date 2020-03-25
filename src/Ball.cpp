@@ -46,3 +46,13 @@ Ball::~Ball()
 {
 
 }
+
+void Ball::setHorizontalVelocity(const int& v)
+{
+  ms_x = v;
+}
+
+void Ball::setVerticalVelocity(const int& v)
+{
+  ms_y = v;
+}
