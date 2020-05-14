@@ -1,4 +1,4 @@
-# Install script for directory: /home/aqua/web-dev/c-dev/dxball
+# Install script for directory: /home/aqua/projects/dxball
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aqua/web-dev/c-dev/dxball/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/aqua/projects/dxball/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

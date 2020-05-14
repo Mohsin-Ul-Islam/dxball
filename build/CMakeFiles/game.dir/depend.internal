@@ -3,15 +3,15 @@
 
 CMakeFiles/game.dir/src/Ball.cpp.o
  ../include/dxball/Ball.h
- /home/aqua/web-dev/c-dev/dxball/src/Ball.cpp
+ /home/aqua/projects/dxball/src/Ball.cpp
 CMakeFiles/game.dir/src/Brick.cpp.o
  ../include/dxball/Brick.h
- /home/aqua/web-dev/c-dev/dxball/src/Brick.cpp
+ /home/aqua/projects/dxball/src/Brick.cpp
 CMakeFiles/game.dir/src/Player.cpp.o
  ../include/dxball/Player.h
- /home/aqua/web-dev/c-dev/dxball/src/Player.cpp
+ /home/aqua/projects/dxball/src/Player.cpp
 CMakeFiles/game.dir/src/game.cpp.o
  ../include/dxball/Ball.h
  ../include/dxball/Brick.h
  ../include/dxball/Player.h
- /home/aqua/web-dev/c-dev/dxball/src/game.cpp
+ /home/aqua/projects/dxball/src/game.cpp

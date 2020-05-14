@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/aqua/web-dev/c-dev/dxball/src/Ball.cpp" "/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles/game.dir/src/Ball.cpp.o"
-  "/home/aqua/web-dev/c-dev/dxball/src/Brick.cpp" "/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles/game.dir/src/Brick.cpp.o"
-  "/home/aqua/web-dev/c-dev/dxball/src/Player.cpp" "/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles/game.dir/src/Player.cpp.o"
-  "/home/aqua/web-dev/c-dev/dxball/src/game.cpp" "/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles/game.dir/src/game.cpp.o"
+  "/home/aqua/projects/dxball/src/Ball.cpp" "/home/aqua/projects/dxball/build/CMakeFiles/game.dir/src/Ball.cpp.o"
+  "/home/aqua/projects/dxball/src/Brick.cpp" "/home/aqua/projects/dxball/build/CMakeFiles/game.dir/src/Brick.cpp.o"
+  "/home/aqua/projects/dxball/src/Player.cpp" "/home/aqua/projects/dxball/build/CMakeFiles/game.dir/src/Player.cpp.o"
+  "/home/aqua/projects/dxball/src/game.cpp" "/home/aqua/projects/dxball/build/CMakeFiles/game.dir/src/game.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

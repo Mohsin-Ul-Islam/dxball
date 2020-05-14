@@ -18,7 +18,19 @@ SFML/Graphics.hpp
 SFML/Graphics.hpp
 -
 
-/home/aqua/web-dev/c-dev/dxball/src/game.cpp
+/home/aqua/projects/dxball/src/Ball.cpp
+dxball/Ball.h
+/home/aqua/projects/dxball/src/dxball/Ball.h
+
+/home/aqua/projects/dxball/src/Brick.cpp
+dxball/Brick.h
+/home/aqua/projects/dxball/src/dxball/Brick.h
+
+/home/aqua/projects/dxball/src/Player.cpp
+dxball/Player.h
+/home/aqua/projects/dxball/src/dxball/Player.h
+
+/home/aqua/projects/dxball/src/game.cpp
 SFML/Graphics.hpp
 -
 SFML/Audio.hpp
@@ -38,9 +50,9 @@ iomanip
 ctime
 -
 dxball/Player.h
-/home/aqua/web-dev/c-dev/dxball/src/dxball/Player.h
+/home/aqua/projects/dxball/src/dxball/Player.h
 dxball/Brick.h
-/home/aqua/web-dev/c-dev/dxball/src/dxball/Brick.h
+/home/aqua/projects/dxball/src/dxball/Brick.h
 dxball/Ball.h
-/home/aqua/web-dev/c-dev/dxball/src/dxball/Ball.h
+/home/aqua/projects/dxball/src/dxball/Ball.h
 

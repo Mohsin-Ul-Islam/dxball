@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aqua/web-dev/c-dev/dxball
+CMAKE_SOURCE_DIR = /home/aqua/projects/dxball
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aqua/web-dev/c-dev/dxball/build
+CMAKE_BINARY_DIR = /home/aqua/projects/dxball/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/game.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/game.dir/flags.make
 
 CMakeFiles/game.dir/src/game.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/game.cpp.o: ../src/game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/aqua/web-dev/c-dev/dxball/src/game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/projects/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/game.dir/src/game.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/game.cpp.o -c /home/aqua/projects/dxball/src/game.cpp
 
 CMakeFiles/game.dir/src/game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/game.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/web-dev/c-dev/dxball/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/projects/dxball/src/game.cpp > CMakeFiles/game.dir/src/game.cpp.i
 
 CMakeFiles/game.dir/src/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/game.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/web-dev/c-dev/dxball/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/projects/dxball/src/game.cpp -o CMakeFiles/game.dir/src/game.cpp.s
 
 CMakeFiles/game.dir/src/Player.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Player.cpp.o: ../src/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/Player.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/Player.cpp.o -c /home/aqua/web-dev/c-dev/dxball/src/Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/projects/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/game.dir/src/Player.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/Player.cpp.o -c /home/aqua/projects/dxball/src/Player.cpp
 
 CMakeFiles/game.dir/src/Player.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Player.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/web-dev/c-dev/dxball/src/Player.cpp > CMakeFiles/game.dir/src/Player.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/projects/dxball/src/Player.cpp > CMakeFiles/game.dir/src/Player.cpp.i
 
 CMakeFiles/game.dir/src/Player.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Player.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/web-dev/c-dev/dxball/src/Player.cpp -o CMakeFiles/game.dir/src/Player.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/projects/dxball/src/Player.cpp -o CMakeFiles/game.dir/src/Player.cpp.s
 
 CMakeFiles/game.dir/src/Brick.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Brick.cpp.o: ../src/Brick.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/Brick.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/Brick.cpp.o -c /home/aqua/web-dev/c-dev/dxball/src/Brick.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/projects/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/game.dir/src/Brick.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/Brick.cpp.o -c /home/aqua/projects/dxball/src/Brick.cpp
 
 CMakeFiles/game.dir/src/Brick.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Brick.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/web-dev/c-dev/dxball/src/Brick.cpp > CMakeFiles/game.dir/src/Brick.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/projects/dxball/src/Brick.cpp > CMakeFiles/game.dir/src/Brick.cpp.i
 
 CMakeFiles/game.dir/src/Brick.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Brick.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/web-dev/c-dev/dxball/src/Brick.cpp -o CMakeFiles/game.dir/src/Brick.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/projects/dxball/src/Brick.cpp -o CMakeFiles/game.dir/src/Brick.cpp.s
 
 CMakeFiles/game.dir/src/Ball.cpp.o: CMakeFiles/game.dir/flags.make
 CMakeFiles/game.dir/src/Ball.cpp.o: ../src/Ball.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.dir/src/Ball.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/Ball.cpp.o -c /home/aqua/web-dev/c-dev/dxball/src/Ball.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/aqua/projects/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/game.dir/src/Ball.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/game.dir/src/Ball.cpp.o -c /home/aqua/projects/dxball/src/Ball.cpp
 
 CMakeFiles/game.dir/src/Ball.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/game.dir/src/Ball.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/web-dev/c-dev/dxball/src/Ball.cpp > CMakeFiles/game.dir/src/Ball.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/aqua/projects/dxball/src/Ball.cpp > CMakeFiles/game.dir/src/Ball.cpp.i
 
 CMakeFiles/game.dir/src/Ball.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/game.dir/src/Ball.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/web-dev/c-dev/dxball/src/Ball.cpp -o CMakeFiles/game.dir/src/Ball.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/aqua/projects/dxball/src/Ball.cpp -o CMakeFiles/game.dir/src/Ball.cpp.s
 
 # Object files for target game
 game_OBJECTS = \
@@ -129,7 +129,7 @@ game: /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.5.1
 game: /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1
 game: /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
 game: CMakeFiles/game.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aqua/web-dev/c-dev/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable game"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/aqua/projects/dxball/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable game"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/game.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -142,6 +142,6 @@ CMakeFiles/game.dir/clean:
 .PHONY : CMakeFiles/game.dir/clean
 
 CMakeFiles/game.dir/depend:
-	cd /home/aqua/web-dev/c-dev/dxball/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aqua/web-dev/c-dev/dxball /home/aqua/web-dev/c-dev/dxball /home/aqua/web-dev/c-dev/dxball/build /home/aqua/web-dev/c-dev/dxball/build /home/aqua/web-dev/c-dev/dxball/build/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/aqua/projects/dxball/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aqua/projects/dxball /home/aqua/projects/dxball /home/aqua/projects/dxball/build /home/aqua/projects/dxball/build /home/aqua/projects/dxball/build/CMakeFiles/game.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/game.dir/depend
 

@@ -100,7 +100,7 @@ int main(int argc, char** argv)
 
   try
   {
-    default_font.loadFromFile("/usr/share/python-django-common/django/contrib/admin/static/admin/fonts/Roboto-Regular-webfont.woff");
+    default_font.loadFromFile("../assets/Roboto-Regular.ttf");
     bsb.loadFromFile("../assets/sounds/glass.ogg");
     psb.loadFromFile("../assets/sounds/sonar.ogg");
   }

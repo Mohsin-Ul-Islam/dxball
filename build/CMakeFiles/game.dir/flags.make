@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/aqua/web-dev/c-dev/dxball/./include -I/home/aqua/web-dev/c-dev/dxball/./src 
+CXX_INCLUDES = -I/home/aqua/projects/dxball/./include -I/home/aqua/projects/dxball/./src 
 
