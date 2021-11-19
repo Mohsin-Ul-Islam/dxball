@@ -5,28 +5,24 @@
 
 using namespace sf;
 
-class Brick
-{
-  private:
+class Brick {
+ private:
+  int life_count;
+  RectangleShape brick;
 
-    int life_count;
-    RectangleShape brick;
+ public:
+  Brick();
+  Brick(float, float, Vector2f, Color);
+  ~Brick();
 
-  public:
+  void render(RenderWindow& w);
 
-    Brick();
-    Brick(float,float,Vector2f,Color);
-    ~Brick();
+  // getters
+  inline int getLifeCount() const { return this->life_count; };
+  inline RectangleShape* self() { return &this->brick; };
 
-    void render(RenderWindow& w);
-
-    //getters
-    inline int getLifeCount() const {return this->life_count;};
-    inline RectangleShape* self() {return &this->brick;};
-
-    //setters
-    void setLifeCount(const int& lc);
-
+  // setters
+  void setLifeCount(const int& lc);
 };
 
 #endif

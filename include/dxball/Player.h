@@ -5,24 +5,20 @@
 
 using namespace sf;
 
-class Player
-{
+class Player {
+ public:
+  int width;
+  int height;
+  int movespeed;
+  Vector2f position;
+  RectangleShape player;
+  Color color;
 
-  public:
-
-    int width;
-    int height;
-    int movespeed;
-    Vector2f position;
-    RectangleShape player;
-    Color color;
-
-    Player(int,int,Color,int);
-    ~Player();
-    void moveRight();
-    void moveLeft();
-    void render(RenderWindow& w);
-
+  Player(int, int, Color, int);
+  ~Player();
+  void moveRight();
+  void moveLeft();
+  void render(RenderWindow& w);
 };
 
 #endif
