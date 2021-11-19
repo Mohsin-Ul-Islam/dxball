@@ -1,3 +1,0 @@
-/home/aqua/projects/dxball/build/CMakeFiles/rebuild_cache.dir
-/home/aqua/projects/dxball/build/CMakeFiles/edit_cache.dir
-/home/aqua/projects/dxball/build/CMakeFiles/game.dir
