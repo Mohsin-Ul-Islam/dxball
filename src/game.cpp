@@ -10,44 +10,10 @@
 
 #include "dxball/Ball.h"
 #include "dxball/Brick.h"
-#include "dxball/Player.h"
+#include "dxball/Consumable.h"
+#include "dxball/Platform.h"
 
 using namespace sf;
-
-class Drop {
- public:
-  int m_speed;
-  CircleShape drop;
-
-  Drop(int radius, Color color, int speed, Vector2f position) {
-    m_speed = speed;
-    drop.setRadius(radius);
-    drop.setFillColor(color);
-    drop.setPosition(position);
-  }
-  void move() {
-    drop.setPosition(drop.getPosition().x, drop.getPosition().y + m_speed);
-  }
-  ~Drop() {}
-  void render(RenderWindow& w) { w.draw(drop); }
-  bool isColliding(const RectangleShape& obstacle) {
-    int xmax = obstacle.getPosition().x + obstacle.getSize().x / 2;
-    int xmin = obstacle.getPosition().x - obstacle.getSize().x / 2;
-    int ymax = obstacle.getPosition().y + obstacle.getSize().y / 2;
-    int ymin = obstacle.getPosition().y - obstacle.getSize().y / 2;
-
-    int radius = drop.getRadius();
-    if ((drop.getPosition().x - radius < xmax ||
-         drop.getPosition().x + radius < xmax) &&
-        (drop.getPosition().x + radius > xmin ||
-         drop.getPosition().x - radius > xmin) &&
-        drop.getPosition().y + radius < ymax &&
-        drop.getPosition().y + radius > ymin) {
-      return true;
-    }
-    return false;
-  }
-};
 
 std::string toString(int val) {
   std::stringstream converter;
@@ -109,10 +75,11 @@ int main(int argc, char** argv) {
   window.setFramerateLimit(60);
   window.setMouseCursorVisible(false);
 
-  Player* platform = new Player(160, 10, Color(223, 77, 2), 10);
+  bool started = false;
+  Platform* platform = new Platform(160, 20, Color(223, 77, 2), 10);
   Ball* ball = new Ball(10, 15, Color::Blue);
   std::deque<Brick> bricks(total_bricks);
-  std::deque<Drop> drops;
+  std::deque<Consumable> drops;
   int brick_width = 80;
   int brick_height = 40;
   int num_bricks_row = screen_width / brick_width;
@@ -137,17 +104,26 @@ int main(int argc, char** argv) {
     while (window.pollEvent(e)) {
       if (e.type == Event::Closed) {
         window.close();
+      } else if (e.type == Event::MouseButtonPressed) {
+        started = true;
       }
     }
 
-    ball->move();
+    if (started) {
+      ball->move();
+    }
 
     for (int i = 0; i < drops.size(); i++) {
       drops.at(i).move();
     }
 
-    platform->player.setPosition(Mouse::getPosition().x,
-                                 platform->player.getPosition().y);
+    platform->platform.setPosition(Mouse::getPosition().x,
+                                   platform->platform.getPosition().y);
+
+    if (!started) {
+      ball->self()->setPosition(Mouse::getPosition().x,
+                                ball->self()->getPosition().y);
+    }
 
     if (ball->self()->getPosition().x - ball->self()->getRadius() <= 0) {
       ball->setHorizontalVelocity(-ball->getHorizontalVelocity());
@@ -168,30 +144,24 @@ int main(int argc, char** argv) {
       window.close();
     }
 
-    float ratio = ball->isColliding(platform->player);
+    float ratio = ball->getCollisionAngle(platform->platform);
     if (ratio != 0) {
       platform_sound.play();
-      // log(toString(rand() % 255));
       ball->setHorizontalVelocity((ratio)*ball->getVerticalVelocity());
       ball->setVerticalVelocity(-ball->getVerticalVelocity());
-      int r = rand() % 255;
-      int g = rand() % 255;
-      int b = rand() % 255;
-      // std::cout<<"rgb("<<r<<","<<g<<","<<b<<")"<<std::endl;
-      ball->self()->setFillColor(Color(r, g, b));
       total_bounces += 1;
     }
 
     for (int i = 0; i < bricks.size(); i++) {
-      float ratio = ball->isColliding(*bricks[i].self());
+      float ratio = ball->getCollisionAngle(*bricks[i].self());
       if (ratio != 0) {
         ball->setHorizontalVelocity((-ratio) * ball->getVerticalVelocity());
         ball->setVerticalVelocity(-ball->getVerticalVelocity());
         brick_sound.play();
         if (bricks[i].getLifeCount() == 0) {
           if (rand() % 100 <= 40) {
-            drops.push_back(Drop(13, Color(250, 250, 250), 8,
-                                 bricks[i].self()->getPosition()));
+            drops.push_back(Consumable(13, Color(250, 250, 250), 8,
+                                       bricks[i].self()->getPosition()));
             // log("drop");
           }
           bricks.erase(bricks.begin() + i);
@@ -204,17 +174,14 @@ int main(int argc, char** argv) {
       }
     }
     for (int i = 0; i < drops.size(); i++) {
-      if (drops.at(i).isColliding(platform->player)) {
+      if (drops.at(i).isColliding(platform->platform)) {
         drops.erase(drops.begin() + i);
-        platform->player.setSize(Vector2f(platform->player.getSize().x + 10,
-                                          platform->player.getSize().y));
-        platform->player.setOrigin(platform->player.getSize().x / 2,
-                                   platform->player.getSize().y / 2);
+        platform->platform.setSize(Vector2f(platform->platform.getSize().x + 10,
+                                            platform->platform.getSize().y));
+        platform->platform.setOrigin(platform->platform.getSize().x / 2,
+                                     platform->platform.getSize().y / 2);
         score += 3;
       }
-    }
-    if (level_time >= 20) {
-      level_time = 0;
     }
     stats.setString("Score: " + toString(score) +
                     " | Time: " + toString(total_time) +

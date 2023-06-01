@@ -1,21 +1,21 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef PLATFORM_H
+#define PLATFORM_H
 
 #include <SFML/Graphics.hpp>
 
 using namespace sf;
 
-class Player {
+class Platform {
  public:
   int width;
   int height;
   int movespeed;
   Vector2f position;
-  RectangleShape player;
+  RectangleShape platform;
   Color color;
 
-  Player(int, int, Color, int);
-  ~Player();
+  Platform(int, int, Color, int);
+  ~Platform();
   void moveRight();
   void moveLeft();
   void render(RenderWindow& w);

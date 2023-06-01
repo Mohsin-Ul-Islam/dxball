@@ -18,7 +18,7 @@ class Ball {
   Ball();
   Ball(int, int, Color);
   ~Ball();
-  float isColliding(const RectangleShape &obstacle);
+  float getCollisionAngle(const RectangleShape &obstacle);
   void render(RenderWindow &w);
   void move();
 
