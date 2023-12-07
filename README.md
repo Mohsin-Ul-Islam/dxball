@@ -2,38 +2,20 @@
 
 This is a classic dxball game made in **C++** using **SFML**
 
-> You need CMake to build this project
+> You need [Bazel](https://bazel.build/) to build this project
 
 ### Build from source
 
 Follow the steps for building the game from source.
 
-Change directory to the game project
+Run bazel
 
 ```
-cd dxball
-```
-
-Create a new build directory and navigate to it
-
-```
-mkdir build && cd build
-```
-
-Configure Makefile
-
-```
-cmake ..
-```
-
-Build the project
-
-```
-make
+bazel build //:dxball
 ```
 
 Run the game
 
 ```
-./dxball
+bazel run //:dxball
 ```

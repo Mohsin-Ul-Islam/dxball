@@ -1,0 +1,32 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "assets",
+    srcs = glob(["assets/**/*"]),
+)
+
+cmake(
+    name = "sfml",
+    cache_entries = {
+        "CMAKE_C_FLAGS": "-fPIC",
+    },
+    lib_source = "@sfml//:sfml_srcs",
+    out_shared_libs = ["libsfml-system.so.2.6", "libsfml-window.so.2.6", "libsfml-network.so.2.6", "libsfml-graphics.so.2.6", "libsfml-audio.so.2.6"],
+)
+
+
+cc_library(
+    name = "dxball_lib",
+    srcs = glob(["src/*.cpp"]),
+    hdrs = glob(["include/dxball/*.h"]),
+    deps = [":sfml"],
+    visibility = ["//visibility:public"],
+    strip_include_prefix = "include",
+)
+
+cc_binary(
+    name = "dxball",
+    deps = [":dxball_lib"],
+    data = [":assets"],
+)

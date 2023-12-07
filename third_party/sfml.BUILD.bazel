@@ -1,0 +1,16 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
+
+filegroup(
+    name = "sfml_srcs",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+
+cc_library(
+    name = "sfml_lib",
+    srcs = glob(["src/SFML/**/*.cpp"]),
+    hdrs = glob(["include/SFML/**/*.hpp", "include/SFML/**/*.inl"]),
+    visibility = ["//visibility:public"],
+    strip_include_prefix = "include",
+)
+
