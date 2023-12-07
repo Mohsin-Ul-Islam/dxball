@@ -3,7 +3,7 @@ load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
 
 filegroup(
     name = "assets",
-    srcs = glob(["assets/**/*"]),
+    srcs = glob(["assets/fonts/*.ttf", "assets/sounds/*.ogg"]),
 )
 
 cmake(

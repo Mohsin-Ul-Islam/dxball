@@ -51,9 +51,9 @@ int main(int argc, char** argv) {
   Font default_font;
 
   try {
-    default_font.loadFromFile("../assets/Roboto-Regular.ttf");
-    bsb.loadFromFile("../assets/sounds/glass.ogg");
-    psb.loadFromFile("../assets/sounds/sonar.ogg");
+    default_font.loadFromFile("./assets/fonts/Roboto-Regular.ttf");
+    bsb.loadFromFile("./assets/sounds/glass.ogg");
+    psb.loadFromFile("./assets/sounds/sonar.ogg");
   } catch (std::exception e) {
     log("cannot load resources.");
     return 1;
