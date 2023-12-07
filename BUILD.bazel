@@ -15,7 +15,6 @@ cmake(
     out_shared_libs = ["libsfml-system.so.2.6", "libsfml-window.so.2.6", "libsfml-network.so.2.6", "libsfml-graphics.so.2.6", "libsfml-audio.so.2.6"],
 )
 
-
 cc_library(
     name = "dxball_lib",
     srcs = glob(["src/*.cpp"]),

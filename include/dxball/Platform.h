@@ -14,6 +14,7 @@ class Platform {
   RectangleShape platform;
   Color color;
 
+  Platform();
   Platform(int, int, Color, int);
   ~Platform();
   void moveRight();
